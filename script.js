@@ -3,12 +3,12 @@ const container = document.querySelector('.container')
 let n = 5
 let containerSize = 500
 let choice = 'black'
-let mode = ''
+// let mode = ''
 var theColor = ''
 
 var colorPicked = document.getElementById("colorPicker")
 colorPicked.addEventListener("input", function () {
-    mode = 'picker'
+    choice = 'picker'
     theColor = colorPicked.value;
 }, false);
 
@@ -36,7 +36,7 @@ function changeColor() {
     if (choice === 'random')
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     else {
-        if (mode === 'picker')
+        if (choice === 'picker')
             this.style.backgroundColor = theColor
         else {
             this.style.backgroundColor = "black"
