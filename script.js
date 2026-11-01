@@ -3,6 +3,10 @@ const container = document.querySelector('.container')
 let n = 5
 let containerSize = 500
 
+function reset(){
+    const item = document.querySelectorAll('.item')
+    item.forEach((item) => item.style.backgroundColor = '#EEEEEE')
+}
 
 function changeGrid() {
     n = Number(prompt('enter grid size (1-100)'))
