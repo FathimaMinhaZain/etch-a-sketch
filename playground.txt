@@ -48,3 +48,8 @@
 </body>
 
 </html>
+
+.item {
+  flex: 1 1 200px; /* grow, shrink, basis */
+  /* Items wrap when they can't fit */
+}
