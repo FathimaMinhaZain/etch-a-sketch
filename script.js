@@ -1,6 +1,8 @@
 const container = document.querySelector('.container')
 
 let n = 5
+let containerSize = 500
+
 
 function changeGrid() {
     n = Number(prompt('enter grid size (1-100)'))
@@ -15,18 +17,17 @@ function makeGrid(n) {
     container.textContent = '';
 
     let i = 0;
-    let containerSize = n * 50;
     let squares = n * n
+    let w = (containerSize/n)
 
     container.style.width = containerSize + 'px'
+    // container.style.height = containerSize + 'px'
 
     for (i = 0; i < squares; i++) {
         const grid = document.createElement('div')
-        grid.setAttribute(
-            'style',
-            'width:50px; height:50px; background-color:grey; border:1px solid black; box-sizing: border-box;'
-        )
         grid.classList.add('item')
+        grid.style.width = w + 'px'
+        grid.style.height = w + 'px'
         container.appendChild(grid)
     }
 }
