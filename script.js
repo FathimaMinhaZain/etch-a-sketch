@@ -2,7 +2,16 @@ const container = document.querySelector('.container')
 
 let n = 5
 let containerSize = 500
-let choice ='black'
+let choice = 'black'
+let mode = ''
+var theColor = ''
+
+var colorPicked = document.getElementById("colorPicker")
+colorPicked.addEventListener("input", function () {
+    mode = 'picker'
+    theColor = colorPicked.value;
+    console.log(theColor)
+}, false);
 
 function reset() {
     const item = document.querySelectorAll('.item')
@@ -17,12 +26,14 @@ function changeGrid() {
         makeGrid(n)
 }
 
-function colorChoice(color){
+function colorChoice(color) {
     choice = color;
 }
 function changeColor() {
     if (choice === 'random')
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    else if (mode === 'picker')
+        this.style.backgroundColor = theColor
     else
         this.style.backgroundColor = "black"
 }
