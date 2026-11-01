@@ -5,12 +5,13 @@ let containerSize = 500
 let choice = 'black'
 let mode = ''
 var theColor = ''
+var count = 0
+
 
 var colorPicked = document.getElementById("colorPicker")
 colorPicked.addEventListener("input", function () {
     mode = 'picker'
     theColor = colorPicked.value;
-    console.log(theColor)
 }, false);
 
 function reset() {
@@ -34,8 +35,12 @@ function changeColor() {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     else if (mode === 'picker')
         this.style.backgroundColor = theColor
-    else
-        this.style.backgroundColor = "black"
+    else {
+        this.style.backgroundColor = "black"    
+    }
+
+    this.count++
+        console.log(this.count)
 }
 
 function makeGrid(n) {
@@ -53,11 +58,14 @@ function makeGrid(n) {
         grid.classList.add('item')
         grid.style.width = w + 'px'
         grid.style.height = w + 'px'
-        grid.addEventListener("mouseover", changeColor)
+        grid.count=0
+
+        grid.addEventListener('mouseover', changeColor)
 
         container.appendChild(grid)
     }
 }
+
 
 window.onload = makeGrid(n);
 
