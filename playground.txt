@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nested Flexbox Grid</title>
+  <style>
+    body {
+      padding: 25px;
+    }
+
+    .title {
+      color: #5C6AC4;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      <!-- box-sizing:border-box -->
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+
+  </div>
+
+  <script>
+    container = document.querySelector('.container')
+    
+    let n=5
+    let i=0;
+    let containerSize = n*50
+    let squares = n*n
+
+    container.style.width = containerSize + 'px'
+
+
+    for (i=0;i<squares;i++){
+      grid = document.createElement('div')
+      grid.setAttribute('style','width:50px; height:50px; background-color:grey; border:1px solid black; box-sizing: border-box;')
+      container.appendChild(grid)
+    }
+  </script>
+</body>
+
+</html>
