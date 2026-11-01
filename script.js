@@ -2,8 +2,9 @@ const container = document.querySelector('.container')
 
 let n = 5
 let containerSize = 500
+let choice ='black'
 
-function reset(){
+function reset() {
     const item = document.querySelectorAll('.item')
     item.forEach((item) => item.style.backgroundColor = '#EEEEEE')
 }
@@ -16,8 +17,14 @@ function changeGrid() {
         makeGrid(n)
 }
 
-function changeColor(){
-    this.style.backgroundColor = "red"
+function colorChoice(color){
+    choice = color;
+}
+function changeColor() {
+    if (choice === 'random')
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    else
+        this.style.backgroundColor = "black"
 }
 
 function makeGrid(n) {
@@ -26,7 +33,7 @@ function makeGrid(n) {
 
     let i = 0;
     let squares = n * n
-    let w = (containerSize/n)
+    let w = (containerSize / n)
 
     container.style.width = containerSize + 'px'
 

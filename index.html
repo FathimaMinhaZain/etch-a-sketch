@@ -13,13 +13,14 @@
         <h1>Etch-a-sketch</h1>
         <div class="btns">
             <button id="reset" onclick="reset()">Reset</button>
-            <button id="color">Color</button>
+            <input type="color" id="colorPicker" value="#000000">
+            <button id="mixColor" onclick="colorChoice('random')">Random-Color</button>
             <button id="grid-size" onclick="changeGrid()">Change grid size</button>
         </div>
     </div>
 
     <div class="container">
-    
+
     </div>
 
     <script src="script.js"></script>
