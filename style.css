@@ -20,10 +20,11 @@ button{
 }
 
 .item{
-  background-color:grey; 
-  border:1px solid black; 
+  background-color:#EEEEEE; 
+  border:1px solid #BFC6C4; 
   box-sizing: border-box;
 }
+
 
 
 

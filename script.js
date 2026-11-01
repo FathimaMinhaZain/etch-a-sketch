@@ -12,6 +12,10 @@ function changeGrid() {
         makeGrid(n)
 }
 
+function changeColor(){
+    this.style.backgroundColor = "red"
+}
+
 function makeGrid(n) {
     // clear the current grid
     container.textContent = '';
@@ -21,13 +25,14 @@ function makeGrid(n) {
     let w = (containerSize/n)
 
     container.style.width = containerSize + 'px'
-    // container.style.height = containerSize + 'px'
 
     for (i = 0; i < squares; i++) {
         const grid = document.createElement('div')
         grid.classList.add('item')
         grid.style.width = w + 'px'
         grid.style.height = w + 'px'
+        grid.addEventListener("mouseover", changeColor)
+
         container.appendChild(grid)
     }
 }
